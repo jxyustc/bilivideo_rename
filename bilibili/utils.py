@@ -16,7 +16,10 @@ def video_rename(dir):
     # 55852277
     bili_series_num = os.path.basename(path)
     # 55852277.dvi
-    series_meta_file = bili_series_num + ".dvi"
+    if 'ss' in bili_series_num:
+        series_meta_file = bili_series_num.split('ss')[1]+".dvi"
+    else:
+        series_meta_file = bili_series_num + ".dvi"
     # E:\OneDrive\个人资料\英语\词汇\55852277\55852277.dvi
     series_meta_file = os.path.join(path, series_meta_file)
     # 【2019版】托福全程直达110分班（口语 + 听力 + 阅读 + 写作 + 词汇）
